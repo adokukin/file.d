@@ -396,7 +396,7 @@ func (p *Plugin) addFieldToValues(field column, sNode *insaneJSON.StrictNode) (a
 		}
 		nVal, err := strconv.ParseInt(lVal[20:23], 10, 16)
 		if err != nil {
-			return nil, fmt.Errorf("%w, can't get %s as nanostring, can't convert %s to Int32", ErrEventFieldHasWrongType, field.Name, lVal[20:29])
+			return nil, fmt.Errorf("%w, can't get %s as nanostring, can't convert %s to Int32", ErrEventFieldHasWrongType, field.Name, lVal[20:23])
 		}
 		return int16(nVal), nil
 	case unknownType:
